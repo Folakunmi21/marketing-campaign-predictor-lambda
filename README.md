@@ -124,15 +124,27 @@ The Lambda function expects a JSON payload containing customer features.
 Example input:
 
 ```bash
-{
-  "age": 45,
-  "income": 65000,
-  "total_purchases": 12,
-  "total_spending": 720,
-  "previous_response_rate": 0.4,
-  "marital_status": "married",
-  "education": "graduate"
-}
+"customer": {
+        "gender": "female",
+        "seniorcitizen": 0,
+        "partner": "yes",
+        "dependents": "no",
+        "phoneservice": "no",
+        "multiplelines": "no_phone_service",
+        "internetservice": "dsl",
+        "onlinesecurity": "no",
+        "onlinebackup": "yes",
+        "deviceprotection": "no",
+        "techsupport": "no",
+        "streamingtv": "no",
+        "streamingmovies": "no",
+        "contract": "month-to-month",
+        "paperlessbilling": "yes",
+        "paymentmethod": "electronic_check",
+        "tenure": 1,
+        "monthlycharges": 29.85,
+        "totalcharges": 29.85
+    }
 ```
 
 Example output:
