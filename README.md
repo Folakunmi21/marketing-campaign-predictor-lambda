@@ -1,6 +1,6 @@
 # Marketing Campaign Predictor - Lambda
 
-This is the serverless version of [marketing-campaign-predictor](https://github.com/Folakunmi21/marketing-campaign-predictor) deployed on AWS Lambda with Docker containers. Predicts customer response to marketing campaigns using machine learning in a serverless architecture.
+This is the serverless version of [marketing-campaign-predictor](https://github.com/Folakunmi21/marketing-campaign-predictor) deployed on AWS Lambda with Docker containers. This model predicts customer response to marketing campaigns using machine learning in a serverless architecture.
 
 ## Overview
 
@@ -18,7 +18,7 @@ Execution model | Long-lived server | Stateless execution |
 Cost model | Always-on | Pay per request |
 
 **Dataset**
-The project uses the Customer Marketing Campaign dataset containing customer demographics, purchase behaviour, and previous campaign acceptance.
+The project uses the [Customer Marketing Campaign dataset](https://www.kaggle.com/datasets/rodsaldanha/arketing-campaign)) containing customer demographics, purchase behaviour, and previous campaign acceptance.
 The dataset is used for **offline training only**. The Lambda function loads a **pre-trained model artifact** (`model.bin`) for inference.
 
 **Key Features:**
@@ -31,8 +31,8 @@ The dataset is used for **offline training only**. The Lambda function loads a *
 Before running this project, ensure you have:
 
 - AWS Account with appropriate permissions
-- AWS CLI configured (Setup guide)
-- Docker Desktop installed (Download here)
+- AWS CLI configured ([Setup guide](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html))
+- Docker Desktop installed ([Download here](https://www.docker.com/products/docker-desktop))
 - Python 3.12+ (for local testing)
 - uv (Python package manager) - Fast and reliable dependency management
 - Git (to clone the repository)
@@ -140,6 +140,33 @@ Example output:
   "response_probability": 0.78,
   "will_respond": true
 }
+```
+
+## Why No requirements.txt?
+
+This project uses **uv** for dependency management instead of traditional `requirements.txt`. Here's why:
+
+**Benefits of uv:**
+- **10-100x faster** than pip for dependency resolution and installation
+- **Reliable dependency locking** via `uv.lock` ensures reproducible builds
+- **Modern tooling** - uv is written in Rust and represents the future of Python packaging
+- **Cleaner project structure** - All dependencies defined in `pyproject.toml`
+
+**For Docker/Lambda deployment:**
+The `Dockerfile` automatically converts uv dependencies to pip-compatible format during build:
+```dockerfile
+RUN uv pip install --system -r <(uv export --format requirements-txt)
+```
+
+This approach gives you:
+- Fast local development with uv
+- Lambda-compatible deployment (no uv needed in production)
+
+**If you prefer pip:**
+You can generate a traditional `requirements.txt` anytime:
+```bash
+uv export --format requirements-txt > requirements.txt
+pip install -r requirements.txt
 ```
 
 ### Technologies Used
