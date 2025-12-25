@@ -1,6 +1,6 @@
 # Marketing Campaign Predictor - Lambda
 
-This is the serverless version of [marketing-campaign-predictor]([link-to-original-repo](https://github.com/Folakunmi21/marketing-campaign-predictor)) deployed on AWS Lambda with Docker containers. Predicts customer response to marketing campaigns using machine learning in a serverless architecture.
+This is the serverless version of [marketing-campaign-predictor]([url](https://github.com/Folakunmi21/marketing-campaign-predictor)) deployed on AWS Lambda with Docker containers. Predicts customer response to marketing campaigns using machine learning in a serverless architecture.
 ## Overview
 
 This project is a serverless deployment of a machine learning model that predicts whether a customer will respond to a marketing campaign.
