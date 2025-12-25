@@ -18,6 +18,7 @@ Execution model | Long-lived server | Stateless execution |
 Cost model | Always-on | Pay per request |
 
 **Dataset**
+
 The project uses the [Customer Marketing Campaign dataset](https://www.kaggle.com/datasets/rodsaldanha/arketing-campaign)) containing customer demographics, purchase behaviour, and previous campaign acceptance.
 The dataset is used for **offline training only**. The Lambda function loads a **pre-trained model artifact** (`model.bin`) for inference.
 
