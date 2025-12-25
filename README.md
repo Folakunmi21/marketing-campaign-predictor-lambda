@@ -1,6 +1,7 @@
 # Marketing Campaign Predictor - Lambda
 
-This is the serverless version of [marketing-campaign-predictor]([url](https://github.com/Folakunmi21/marketing-campaign-predictor)) deployed on AWS Lambda with Docker containers. Predicts customer response to marketing campaigns using machine learning in a serverless architecture.
+This is the serverless version of [marketing-campaign-predictor](https://github.com/Folakunmi21/marketing-campaign-predictor) deployed on AWS Lambda with Docker containers. Predicts customer response to marketing campaigns using machine learning in a serverless architecture.
+
 ## Overview
 
 This project is a serverless deployment of a machine learning model that predicts whether a customer will respond to a marketing campaign.
@@ -59,7 +60,7 @@ powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
 ```
 ### 2. Clone the repository
 ```bash
-git clone https://github.com/yourusername/marketing-campaign-predictor-lambda.git
+git clone https://github.com/Folakunmi21/marketing-campaign-predictor-lambda.git
 cd marketing-campaign-predictor-lambda
 ```
 
@@ -151,6 +152,6 @@ Example output:
 - Amazon ECR
 - boto3
 
-Related Project
-The FastAPI-based deployment of this project is available here:
-[Marketing Campaign Response Predictor]([url](https://github.com/Folakunmi21/marketing-campaign-predictor)) (FastAPI + Fly.io)
+Related Project  
+The FastAPI-based deployment of this project is available here:  
+[Marketing Campaign Response Predictor](https://github.com/Folakunmi21/marketing-campaign-predictor) (FastAPI + Fly.io)
